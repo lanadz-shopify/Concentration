@@ -9,19 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var flipCount: Int = 0 {
+    private var flipCount: Int = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
         }
     }
-    var numberOfPairsOfCards: Int {
+    private var numberOfPairsOfCards: Int {
         return (cardsButtons.count + 1) / 2
     }
 
-    lazy var game: Concentration = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
-    @IBOutlet var cardsButtons: [UIButton]!
-    @IBOutlet weak var flipCountLabel: UILabel!
-    @IBAction func touchCard(_ sender: UIButton) {
+    private lazy var game: Concentration = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+    @IBOutlet private var cardsButtons: [UIButton]!
+    @IBOutlet private weak var flipCountLabel: UILabel!
+    @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
         let cardIndex = cardsButtons.index(of: sender)!
         //flipCard(withEmoji: symbols[cardIndex], on: sender)
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         updatelViewFromModel()
     }
 
-    func updatelViewFromModel() {
+    private func updatelViewFromModel() {
         for index in cardsButtons.indices {
             let button = cardsButtons[index]
             let card = game.cards[index]
@@ -43,10 +43,10 @@ class ViewController: UIViewController {
         }
     }
 
-    var symbols: Array<String> = ["🦊","🦋","🐤","🐸","🌴","😄", "🐶", "🐝", "🐌", "🦀", "🌷", "🌺", "🌼", "🌞", "🍎", "🍏", "🍓", "🥑", "🥦", "🥐"]
-    var emoji = Dictionary<Int,String>()
+    private var symbols: Array<String> = ["🦊","🦋","🐤","🐸","🌴","😄", "🐶", "🐝", "🐌", "🦀", "🌷", "🌺", "🌼", "🌞", "🍎", "🍏", "🍓", "🥑", "🥦", "🥐"]
+    private var emoji = Dictionary<Int,String>()
 
-    func emoji(for card: Card) -> String {
+    private func emoji(for card: Card) -> String {
         if emoji[card.identifier] == nil, symbols.count > 0 {
             let randomIndexForSymbols = Int(arc4random_uniform(UInt32(symbols.count)))
             emoji[card.identifier] = symbols.remove(at: randomIndexForSymbols)
