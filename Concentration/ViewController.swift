@@ -44,14 +44,14 @@ class ViewController: UIViewController {
     }
 
     private var symbols: Array<String> = ["🦊","🦋","🐤","🐸","🌴","😄", "🐶", "🐝", "🐌", "🦀", "🌷", "🌺", "🌼", "🌞", "🍎", "🍏", "🍓", "🥑", "🥦", "🥐"]
-    private var emoji = Dictionary<Int,String>()
+    private var emoji = Dictionary<Card,String>()
 
     private func emoji(for card: Card) -> String {
-        if emoji[card.identifier] == nil, symbols.count > 0 {
+        if emoji[card] == nil, symbols.count > 0 {
             let randomIndexForSymbols = symbols.count.random
-            emoji[card.identifier] = symbols.remove(at: randomIndexForSymbols)
+            emoji[card] = symbols.remove(at: randomIndexForSymbols)
         }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
 }
 
