@@ -12,17 +12,8 @@ class Concentration {
 
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
-            var foundindex: Int?
-            for index in cards.indices {
-                if cards[index].isFaceUp {
-                    if foundindex == nil {
-                        foundindex = index
-                    } else {
-                        return nil
-                    }
-                }
-            }
-            return foundindex
+            let faceUpCardIndices = cards.indices.filter { cards[$0].isFaceUp }
+            return faceUpCardIndices.count == 1 ? faceUpCardIndices.first : nil
         }
         set  {
             for index in cards.indices {
