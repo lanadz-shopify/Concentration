@@ -43,13 +43,13 @@ class ConcentrationViewController: UIViewController {
         }
     }
 
-    private var symbols: Array<String> = ["🦊","🦋","🐤","🐸","🌴","😄", "🐶", "🐝", "🐌", "🦀", "🌷", "🌺", "🌼", "🌞", "🍎", "🍏", "🍓", "🥑", "🥦", "🥐"]
+    private var symbols: String = "🦊🦋🐤🐸🌴😄🐶🐝🐌🦀🌷🌺🌼🌞🍎🍏🍓🥑🥦🥐"
     private var emoji = Dictionary<Card,String>()
 
     private func emoji(for card: Card) -> String {
         if emoji[card] == nil, symbols.count > 0 {
-            let randomIndexForSymbols = symbols.count.random
-            emoji[card] = symbols.remove(at: randomIndexForSymbols)
+            let randomIndexForSymbols = symbols.index(symbols.startIndex, offsetBy: symbols.count.random)
+            emoji[card] = String(symbols.remove(at: randomIndexForSymbols))
         }
         return emoji[card] ?? "?"
     }
