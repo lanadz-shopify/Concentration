@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
     private var flipCount: Int = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
