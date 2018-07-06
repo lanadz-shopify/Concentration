@@ -35,10 +35,10 @@ class ConcentrationViewController: UIViewController {
             let card = game.cards[index]
             if card.isFaceUp {
                 button.setTitle(emoji(for: card), for: UIControlState.normal)
-                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
             } else {
                 button.setTitle("", for: UIControlState.normal)
-                button.backgroundColor = card.isMached ? #colorLiteral(red: 1, green: 0.6439058386, blue: 0.3423922962, alpha: 0) : #colorLiteral(red: 1, green: 0.6439058386, blue: 0.3423922962, alpha: 1)
+                button.backgroundColor = card.isMached ? #colorLiteral(red: 1, green: 0.6439058386, blue: 0.3423922962, alpha: 0) : #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
             }
         }
     }
