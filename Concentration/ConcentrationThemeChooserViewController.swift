@@ -15,6 +15,9 @@ class ConcentrationThemeChooserViewController: UIViewController {
         "Sports": "⚽️🏀🏈⚾️🏉🏐🏓⛸🏊‍♀️🏹🥊⛹️‍♂️🏌️‍♀️🏄‍♀️🧘‍♂️",
         "Faces": "😀😄😇😍😜🤓😎🤩☹️😢😡😱😯😲🤠"
     ]
+    @IBAction func changeTheme(_ sender: Any) {
+        performSegue(withIdentifier: "Choose Theme", sender: sender)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Choose Theme" {
             if let themeName = (sender as? UIButton)?.currentTitle, let theme = themes[themeName] {
