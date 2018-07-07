@@ -1,14 +1,14 @@
-//
-//  ViewController.swift
-//  Concentration
-//
-//  Created by Svitlana Dzyuban on 10/6/18.
-//  Copyright © 2018 Lana Dzyuban. All rights reserved.
-//
-
-import UIKit
-
-class ConcentrationViewController: UIViewController {
+  //
+  //  ViewController.swift
+  //  Concentration
+  //
+  //  Created by Svitlana Dzyuban on 10/6/18.
+  //  Copyright © 2018 Lana Dzyuban. All rights reserved.
+  //
+  
+  import UIKit
+  
+  class ConcentrationViewController: UIViewController {
     private var flipCount: Int = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
@@ -28,24 +28,34 @@ class ConcentrationViewController: UIViewController {
         game.chooseCard(at: cardIndex)
         updatelViewFromModel()
     }
-
+    
     private func updatelViewFromModel() {
-        for index in cardsButtons.indices {
-            let button = cardsButtons[index]
-            let card = game.cards[index]
-            if card.isFaceUp {
-                button.setTitle(emoji(for: card), for: UIControlState.normal)
-                button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-            } else {
-                button.setTitle("", for: UIControlState.normal)
-                button.backgroundColor = card.isMached ? #colorLiteral(red: 1, green: 0.6439058386, blue: 0.3423922962, alpha: 0) : #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
+        if cardsButtons != nil {
+            for index in cardsButtons.indices {
+                let button = cardsButtons[index]
+                let card = game.cards[index]
+                if card.isFaceUp {
+                    button.setTitle(emoji(for: card), for: UIControlState.normal)
+                    button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                } else {
+                    button.setTitle("", for: UIControlState.normal)
+                    button.backgroundColor = card.isMached ? #colorLiteral(red: 1, green: 0.6439058386, blue: 0.3423922962, alpha: 0) : #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
+                }
             }
+            
         }
     }
-
+    
+    var theme: String? {
+        didSet {
+            symbols = theme ?? ""
+            emoji = [:]
+            updatelViewFromModel()
+        }
+    }
     private var symbols: String = "🦊🦋🐤🐸🌴😄🐶🐝🐌🦀🌷🌺🌼🌞🍎🍏🍓🥑🥦🥐"
     private var emoji = Dictionary<Card,String>()
-
+    
     private func emoji(for card: Card) -> String {
         if emoji[card] == nil, symbols.count > 0 {
             let randomIndexForSymbols = symbols.index(symbols.startIndex, offsetBy: symbols.count.random)
@@ -53,9 +63,9 @@ class ConcentrationViewController: UIViewController {
         }
         return emoji[card] ?? "?"
     }
-}
-
-extension Int {
+  }
+  
+  extension Int {
     var random: Int {
         if self > 0 {
             return Int(arc4random_uniform(UInt32(self)))
@@ -65,5 +75,5 @@ extension Int {
             return 0
         }
     }
-}
-
+  }
+  
