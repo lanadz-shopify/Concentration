@@ -71,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CIu-3m-Yb4">
-                                <rect key="frame" x="20" y="20" width="984" height="288"/>
+                                <rect key="frame" x="20" y="40" width="984" height="288"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hRN-fr-jgV">
                                         <rect key="frame" x="0.0" y="0.0" width="984" height="66"/>
@@ -264,7 +264,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CIu-3m-Yb4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PSH-kQ-pIL"/>
+                            <constraint firstItem="CIu-3m-Yb4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="PSH-kQ-pIL"/>
                             <constraint firstItem="YVC-NQ-4AX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YB0-kt-tMg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CIu-3m-Yb4" secondAttribute="trailing" constant="20" id="gGP-IF-dU6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YVC-NQ-4AX" secondAttribute="bottom" constant="20" id="idC-Yy-sMa"/>
