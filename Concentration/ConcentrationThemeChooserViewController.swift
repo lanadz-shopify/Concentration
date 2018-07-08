@@ -15,9 +15,19 @@ class ConcentrationThemeChooserViewController: UIViewController {
         "Sports": "⚽️🏀🏈⚾️🏉🏐🏓⛸🏊‍♀️🏹🥊⛹️‍♂️🏌️‍♀️🏄‍♀️🧘‍♂️",
         "Faces": "😀😄😇😍😜🤓😎🤩☹️😢😡😱😯😲🤠"
     ]
-    @IBAction func changeTheme(_ sender: Any) {
-        performSegue(withIdentifier: "Choose Theme", sender: sender)
+    var spliViewDetailConcentrationViewController: ConcentrationViewController? {
+        return splitViewController?.viewControllers.last as? ConcentrationViewController
     }
+    @IBAction func changeTheme(_ sender: Any) {
+        if let cvc = spliViewDetailConcentrationViewController {
+            if let themeName = (sender as? UIButton)?.currentTitle, let theme = themes[themeName] {
+                cvc.theme = theme
+            }
+        } else {
+            performSegue(withIdentifier: "Choose Theme", sender: sender)
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Choose Theme" {
             if let themeName = (sender as? UIButton)?.currentTitle, let theme = themes[themeName] {

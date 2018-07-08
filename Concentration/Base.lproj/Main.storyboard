@@ -27,18 +27,24 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Sports"/>
                                         <connections>
-                                            <action selector="changeTheme:" destination="BX5-ea-XIg" eventType="touchUpInside" id="SxX-DR-lqE"/>
+                                            <action selector="changeTheme:" destination="BX5-ea-XIg" eventType="touchUpInside" id="T0a-SF-KDq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6au-dd-sYE">
                                         <rect key="frame" x="22" y="80" width="126" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Faces"/>
+                                        <connections>
+                                            <action selector="changeTheme:" destination="BX5-ea-XIg" eventType="touchUpInside" id="zoy-Ks-NCD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lii-2u-W0a">
                                         <rect key="frame" x="0.0" y="160" width="170" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Animals"/>
+                                        <connections>
+                                            <action selector="changeTheme:" destination="BX5-ea-XIg" eventType="touchUpInside" id="yO3-Nq-fMN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
