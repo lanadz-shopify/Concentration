@@ -18,11 +18,19 @@ class ConcentrationThemeChooserViewController: UIViewController {
     var spliViewDetailConcentrationViewController: ConcentrationViewController? {
         return splitViewController?.viewControllers.last as? ConcentrationViewController
     }
+
+    private var lastSeguedConcentrationController: ConcentrationViewController?
+
     @IBAction func changeTheme(_ sender: Any) {
         if let cvc = spliViewDetailConcentrationViewController {
             if let themeName = (sender as? UIButton)?.currentTitle, let theme = themes[themeName] {
                 cvc.theme = theme
             }
+        } else if let cvc = lastSeguedConcentrationController {
+            if let themeName = (sender as? UIButton)?.currentTitle, let theme = themes[themeName] {
+                cvc.theme = theme
+            }
+            navigationController?.pushViewController(cvc, animated: true)
         } else {
             performSegue(withIdentifier: "Choose Theme", sender: sender)
         }
@@ -33,6 +41,7 @@ class ConcentrationThemeChooserViewController: UIViewController {
             if let themeName = (sender as? UIButton)?.currentTitle, let theme = themes[themeName] {
                 if let cvc = segue.destination as? ConcentrationViewController {
                     cvc.theme = theme
+                    lastSeguedConcentrationController = cvc
                 }
             }
         }
