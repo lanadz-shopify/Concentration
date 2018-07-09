@@ -28,6 +28,7 @@ class Concentration {
             cards.append(card)
         }
 
+        cards.shuffle()
     }
     func chooseCard(at index: Int) {
         if !cards[index].isMached {
@@ -41,12 +42,5 @@ class Concentration {
                 indexOfOneAndOnlyFaceUpCard = index
             }
         }
-    }
-    //TODO: Shuffle cards
-}
-
-extension Collection {
-    var oneAndOnly: Element? {
-        return count == 1 ? first : nil
     }
 }

@@ -7,7 +7,7 @@
   //
   
   import UIKit
-  
+
   class ConcentrationViewController: UIViewController {
     private var flipCount: Int = 0 {
         didSet {
@@ -64,16 +64,3 @@
         return emoji[card] ?? "?"
     }
   }
-  
-  extension Int {
-    var random: Int {
-        if self > 0 {
-            return Int(arc4random_uniform(UInt32(self)))
-        } else if self < 0 {
-            return Int(arc4random_uniform(UInt32(-self)))
-        } else {
-            return 0
-        }
-    }
-  }
-  
