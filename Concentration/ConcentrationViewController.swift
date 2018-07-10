@@ -9,11 +9,6 @@
   import UIKit
 
   class ConcentrationViewController: UIViewController {
-    private var flipCount: Int = 0 {
-        didSet {
-            flipCountLabel.text = "Flips: \(flipCount)"
-        }
-    }
     private var numberOfPairsOfCards: Int {
         return (cardsButtons.count + 1) / 2
     }
@@ -26,11 +21,10 @@
         if ((sender as? UIButton) != nil) {
             game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
             updatelViewFromModel()
-            flipCount = 0
         }
     }
     @IBAction private func touchCard(_ sender: UIButton) {
-        flipCount += 1
+
         let cardIndex = cardsButtons.index(of: sender)!
         //flipCard(withEmoji: symbols[cardIndex], on: sender)
         game.chooseCard(at: cardIndex)
@@ -50,7 +44,7 @@
                     button.backgroundColor = card.isMached ? #colorLiteral(red: 1, green: 0.6439058386, blue: 0.3423922962, alpha: 0) : #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
                 }
             }
-            
+            flipCountLabel.text = "Flips: \(game.flipCount)"
         }
     }
     

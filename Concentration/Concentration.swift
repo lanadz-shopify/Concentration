@@ -9,7 +9,7 @@
 import Foundation
 class Concentration {
     private(set) var cards = Array<Card>()
-
+    var flipCount = 0
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             return cards.indices.filter({ cards[$0].isFaceUp }).oneAndOnly
@@ -31,6 +31,7 @@ class Concentration {
         cards.shuffle()
     }
     func chooseCard(at index: Int) {
+        flipCount += 1
         if !cards[index].isMached {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 if cards[index] == cards[matchIndex] {
