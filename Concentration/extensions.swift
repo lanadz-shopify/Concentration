@@ -27,7 +27,7 @@ extension Collection {
 }
 
 extension Array {
-    mutating func shuffle() -> Array {
+   @discardableResult mutating func shuffle() -> Array {
         var existing = self
         self.removeAll()
 
