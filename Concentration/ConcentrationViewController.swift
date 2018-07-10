@@ -21,6 +21,14 @@
     private lazy var game: Concentration = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     @IBOutlet private var cardsButtons: [UIButton]!
     @IBOutlet private weak var flipCountLabel: UILabel!
+    
+    @IBAction func startNewGame(_ sender: Any) {
+        if ((sender as? UIButton) != nil) {
+            game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+            updatelViewFromModel()
+            flipCount = 0
+        }
+    }
     @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
         let cardIndex = cardsButtons.index(of: sender)!
