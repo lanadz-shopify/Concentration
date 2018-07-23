@@ -20,6 +20,7 @@
     @IBAction func startNewGame(_ sender: Any) {
         if ((sender as? UIButton) != nil) {
             game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+            symbols = Themes().getEmojiString(theme: selectedTheme)
             updatelViewFromModel()
         }
     }
@@ -47,15 +48,15 @@
             flipCountLabel.text = "Flips: \(game.flipCount)"
         }
     }
-    
-    var theme: String? {
+
+    var selectedTheme: String? {
         didSet {
-            symbols = theme ?? ""
+            symbols = Themes().getEmojiString(theme: selectedTheme)
             emoji = [:]
             updatelViewFromModel()
         }
     }
-    private var symbols: String = "🦊🦋🐤🐸🌴😄🐶🐝🐌🦀🌷🌺🌼🌞🍎🍏🍓🥑🥦🥐"
+    private var symbols: String = ""
     private var emoji = Dictionary<Card,String>()
     
     private func emoji(for card: Card) -> String {

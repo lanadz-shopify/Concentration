@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ConcentrationViewController.emoji(for:):ConcentrationViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "randomIndexForSymbols">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

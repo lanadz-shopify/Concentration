@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F31C621020F306B100E6E3FC /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31C620F20F306B100E6E3FC /* extensions.swift */; };
+		F3808AF92100E12500E7F706 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3808AF82100E12500E7F706 /* Themes.swift */; };
 		F39E9CB820CD13E1003E4313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E9CB720CD13E1003E4313 /* AppDelegate.swift */; };
 		F39E9CBA20CD13E1003E4313 /* ConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E9CB920CD13E1003E4313 /* ConcentrationViewController.swift */; };
 		F39E9CBD20CD13E1003E4313 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39E9CBB20CD13E1003E4313 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		F31C620F20F306B100E6E3FC /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = extensions.swift; path = Concentration/extensions.swift; sourceTree = "<group>"; };
+		F3808AF82100E12500E7F706 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		F39E9CB420CD13E1003E4313 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39E9CB720CD13E1003E4313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F39E9CB920CD13E1003E4313 /* ConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		F39E9CB620CD13E1003E4313 /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
+				F3808AF82100E12500E7F706 /* Themes.swift */,
 				F3A795C620F056D700A5BD6B /* ConcentrationThemeChooserViewController.swift */,
 				F3F91EB320D20CFF003DA160 /* Concentration.swift */,
 				F3F91EB520D20E9A003DA160 /* Card.swift */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3808AF92100E12500E7F706 /* Themes.swift in Sources */,
 				F3A795C720F056D700A5BD6B /* ConcentrationThemeChooserViewController.swift in Sources */,
 				F39E9CBA20CD13E1003E4313 /* ConcentrationViewController.swift in Sources */,
 				F39E9CB820CD13E1003E4313 /* AppDelegate.swift in Sources */,
@@ -300,6 +304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9B9GE2UEC;
 				INFOPLIST_FILE = Concentration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9B9GE2UEC;
 				INFOPLIST_FILE = Concentration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
