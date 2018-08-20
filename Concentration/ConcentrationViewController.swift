@@ -53,10 +53,15 @@
                     button.backgroundColor = card.isMached ? #colorLiteral(red: 1, green: 0.6439058386, blue: 0.3423922962, alpha: 0) : #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
                 }
             }
-            flipCountLabel.text = "Flips: \(game.flipCount)"
+            //            flipCountLabel.text = "Flips: \(game.flipCount)"
+            flipCountLabel.text = traitCollection.verticalSizeClass == .compact ? "Flips: \(game.flipCount)" : "Flips - \(game.flipCount)"
         }
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        print("changed trait")
+    }
     var selectedTheme: String? {
         didSet {
             symbols = Themes().getEmojiString(theme: selectedTheme)
